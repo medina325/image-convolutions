@@ -16,7 +16,9 @@ if __name__ == '__main__':
     kernel.prewitt_edges_kernel_2,
     kernel.avg_3x3_kernel,
     kernel.avg_5x5_kernel,
-    kernel.create_gaussian_kernel(1)
+    kernel.create_gaussian_kernel(sigma=1),
+    kernel.create_gaussian_kernel(sigma=3),
+    kernel.create_gaussian_kernel(sigma=5)
   ]
 
   for img_url in img_urls:

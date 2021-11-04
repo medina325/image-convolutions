@@ -1,11 +1,10 @@
 import numpy as np
-
-def get_index(i1: tuple, i2: tuple) -> tuple:
-  return tuple(map(lambda x,y: x + y, i1, i2))
+from util import get_index
 
 def idx_is_valid(width, height, x, y):
   return 0 <= x < width and 0 <= y < height
 
+# TODO transform into generator
 def convolute_pixel(image, idx, kernel):
   w, h = image.shape
   n, _ = kernel.shape
@@ -20,7 +19,7 @@ def convolute_pixel(image, idx, kernel):
       
       convoluted_pixel += image[i_idx] * kernel[k_idx] if idx_is_valid(w, h, *i_idx) else 0
   
-  return convoluted_pixel / kernel.size
+  return convoluted_pixel
 
 def convolute(img, kernel):   
   convoluted_image = np.zeros(img.shape, dtype=np.uint8)
