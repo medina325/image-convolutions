@@ -22,14 +22,18 @@ if __name__ == '__main__':
   ]
 
   for img_url in img_urls:
-    img = util.read_image(img_url)
+    try:
+      img = util.read_image(img_url)
 
-    for k in kernels:
-      improved_img = convolute(img, k)
-      
-      io.imshow(img)
-      io.show()
-      io.imshow(improved_img)
-      io.show()
+      for k in kernels:
+        improved_img = convolute(img, k)
+        
+        io.imshow(img)
+        io.show()
+        io.imshow(improved_img)
+        io.show()
 
-      # TODO plot side-by-side comparision
+        # TODO plot side-by-side comparision
+        
+    except Exception as e:
+      print(e)
