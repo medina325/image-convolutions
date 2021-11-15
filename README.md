@@ -13,3 +13,4 @@ The current list of kernels are:
 Current implementation is very naive and poorly optimized. Hence a small list of improvements to be made:
 - Use Python Generators whenever possible
 - Use vectorized/parallel operations from numpy
+- Use Cython for unavoidable pixel-by-pixel for loops

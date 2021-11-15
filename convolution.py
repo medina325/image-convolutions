@@ -1,10 +1,10 @@
 import numpy as np
+from tqdm import tqdm
 from util import get_index
 
 def idx_is_valid(width, height, x, y):
   return 0 <= x < width and 0 <= y < height
 
-# TODO transform into generator
 def convolute_pixel(image, idx, kernel):
   w, h = image.shape
   n, _ = kernel.shape
@@ -21,12 +21,12 @@ def convolute_pixel(image, idx, kernel):
   
   return convoluted_pixel
 
-def convolute(img, kernel):   
+def convolute(img, kernel):
   convoluted_image = np.zeros(img.shape, dtype=np.uint8)
   w, h = img.shape
   
-  for x in range(w):
+  for x in tqdm(range(w)):
     for y in range(h):
       convoluted_image[(x,y)] = convolute_pixel(img, (x,y), kernel)
   
-  return np.array(convoluted_image)
+  return convoluted_image

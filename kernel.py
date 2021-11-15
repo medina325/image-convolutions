@@ -27,10 +27,8 @@ prewitt_edges_kernel_2 = np.array([
 ])
 
 avg_3x3_kernel = np.ones((3,3)) / 9
-
 avg_5x5_kernel = np.ones((5,5)) / 25
 
-# TODO turn into generator
 def create_gaussian_kernel(sigma):
   def gaussian_pixel(sigma, x, y):    
     return (1 / (2*np.pi*sigma*sigma)) * math.exp(-(x*x + y*y) / (2*sigma*sigma))
