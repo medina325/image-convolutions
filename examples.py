@@ -3,7 +3,6 @@ import util
 import kernel
 from convolution import convolute
 
-
 img_urls = [
   'https://www.dropbox.com/s/updljye8v80pipg/building.jpg?dl=1', 
   'https://www.dropbox.com/s/lcoqk6btwll8dbg/noisy.jpg?dl=1',
@@ -50,7 +49,7 @@ def smoothing_images():
 
   convoluted_imgs = [convolute(noisy_img, kernel) for kernel in kernels]
 
-  util.plot_comparisions(noisy_img, convoluted_imgs, kernel_names, 'smoothing')
+  util.plot_comparisions(noisy_img, convoluted_imgs, kernel_names, 'smoothing_results')
 
 
 def detecting_edges():
@@ -72,5 +71,5 @@ def detecting_edges():
   
   convoluted_imgs = [convolute(building_img, kernel) for kernel in kernels]
 
-  util.plot_comparisions(building_img, convoluted_imgs, kernel_names, 'edges')
+  util.plot_comparisions(building_img, convoluted_imgs, kernel_names, 'edges_results')
 

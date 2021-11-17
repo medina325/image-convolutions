@@ -28,7 +28,7 @@ def plot_comparisions(original_img, conv_imgs, conv_img_titles, operation='resul
       ax.set_title(conv_img_titles[i])
       ax.imshow(conv_imgs[i], cmap='gray')
 
-    plt.savefig(f'results/{operation}.jpg')
+    plt.savefig(f'{operation}.jpg')
     plt.show()
     
 

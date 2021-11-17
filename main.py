@@ -1,4 +1,3 @@
-import time
 from examples import detecting_edges, smoothing_images
 
 if __name__ == '__main__':
